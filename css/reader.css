@@ -6,7 +6,7 @@
 root { display: block; }
 
 body {
-  font-size: 17pt;
+  font-size: 16pt;
 
   margin: 0;
   padding: 3% 3% 5% 3%;
@@ -18,6 +18,7 @@ body {
   font-weight: 400;
   line-height: 1.45em;
 }
+
 
 
 /*.dropcap {*/
@@ -43,6 +44,7 @@ article > root > p:first-of-type:first-letter {
 @media screen and (min-width: 760px) {
   body {
     padding: 1% 5% 5% 5%;
+    font-size: 17pt;
   }
 
   article {
@@ -190,7 +192,7 @@ nav {
   max-width: 1000px;
   font-size: 0.5em;
 
-  font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Gill Sans",Helvetica,Arial,sans-serif;
   /*letter-spacing: 0.15em;*/
   /*text-transform: uppercase;*/
 }
@@ -342,17 +344,16 @@ footer {
   padding-bottom: 1em;
   border-top: 1px solid LIGHTGRAY;
   max-width: 1000px;
-  color: DARKGRAY;
+  color: GRAY;
 
   font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 0.6em;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  line-height: 1.2em;
 }
 footer a,
 footer a:visited {
-  color: DARKGRAY;
+  color: GRAY;
 }
 footer a:hover {
   color: CRIMSON;

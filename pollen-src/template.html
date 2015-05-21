@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="//use.typekit.net/gfc3fmv.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>◊select['h1 doc] | Flexbox.website</title>
+  <link rel="stylesheet" href="/css/prism.css">
+  <link rel="stylesheet" href="/css/reader.css">
+
+  <!-- Typekit -->
+  <script>try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+  ◊(define prev-page (previous here))
+  ◊(define next-page (next here))
+  ◊(define parent-page (parent here))
+
+  <main id="main">
+    <header>
+      <p>
+        ◊when/block[(not (equal? 'pagetree-root parent-page))]{
+        <a id="chapter" href="/◊|parent-page|">◊(select 'h1 parent-page)</a>}
+
+        ◊when/block[(equal? 'pagetree-root parent-page)]{
+        <a id="chapter" href="/">Home</a>}
+      </p>
+      <p>
+        <a href='/'>Flexbox.website</a>
+      </p>
+    </header>
+
+    <article>
+      ◊->html[doc]
+    </article>
+
+    <nav>
+
+      ◊when/block[prev-page]{
+      <a id="prev" href="/◊|prev-page|">← ◊(select 'h1 prev-page)</a>}
+
+      ◊when/block[next-page]{
+      <a id="next" href="/◊|next-page|">◊(select 'h1 next-page) →</a>}
+    </nav>
+
+
+    ◊when/block[prev-page]{
+    <a href="/◊|prev-page|" title="← ◊(select 'h1 prev-page)" class="overlay prev">←</a>}
+
+    ◊when/block[next-page]{
+    <a href="/◊|next-page|" title="◊(select 'h1 next-page) →" class="overlay next">→</a>}
+
+
+  </main>
+
+  <footer>
+    <small><a href='/'>Flexbox.website</a>. &copy; 2015 by ◊|author|.<br><small>Text and images are in <a href='http://creativecommons.org/licenses/by-nc/4.0/'>CC BY-NC 4.0</a> lincense.</small><br><small>All code examples are in <a href='http://opensource.org/licenses/MIT'>MIT license</a>.</small></small>
+  </footer>
+
+  <div id='overlay' class='out'>
+    <img id='overlay-img' src=''>
+    <div id='overlay-caption'></div>
+  </div>
+
+  <!-- © 2015 Thomas Seng Hin Mak. -->
+
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="/js/smoothstate.js"></script>
+  <script src="/js/prism.min.js"></script>
+  <script src="/js/website.js"></script>
+</body>
+</html>

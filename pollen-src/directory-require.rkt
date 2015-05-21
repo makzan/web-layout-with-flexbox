@@ -4,6 +4,19 @@
 (provide (all-defined-out))
 
 (require pollen/tag)
+
+
+
+(require pollen/decode txexpr)
+
+(define (root . items)
+  (decode (make-txexpr 'root '() items)
+    #:txexpr-elements-proc detect-paragraphs
+    #:exclude-tags '(style script pre code)))
+    
+    
+
+
 (define headline (make-default-tag-function 'h1))
 (define list (make-default-tag-function 'ul))
 (define item (make-default-tag-function 'li))
@@ -45,11 +58,7 @@
 (define (ioscode code1 code2) `(div (div (a [[data-lang, "objc"]], "Obj-C") (a [[data-lang, "swift"]], "Swift")), code1 , code2) )
 
 
+(define (codepen height slug) `(p [[data-height, height][data-slug-hash, slug][data-theme-id,"15336"][data-default-tab, "result"][data-user, "makzan"]] (a [[href, (string-append "http://codepen.io/makzan/pen/" slug)]] (string-append "http://codepen.io/makzan/pen/", slug)) ))
 
-(require pollen/decode txexpr)
-(register-block-tag 'code)
+  
 
-(define (root . items)
-  (decode (make-txexpr 'root '() items)
-    #:txexpr-elements-proc detect-paragraphs
-    #:exclude-tags '(style script pre code)))

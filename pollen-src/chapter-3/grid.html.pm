@@ -47,7 +47,7 @@ It’s very easy to define our ◊em{mobile-first grid system} by using the Scss
 
 ◊headline{HTML that uses the grid}
 
-◊html{
+◊markup{
   <header>
     <div class="row">
       <div class="small-12 col">

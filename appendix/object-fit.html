@@ -25,7 +25,19 @@
     </header>
 
     <article>
-      <root><h1>Object-fit</h1><p><scss><p>figure {<br />  padding: 5px;</p><p>img {<br />    width: 100%;<br />    height: 200px;<br />    object-fit: cover;<br />  }</p><p>figcaption {<br />    text-align: center;<br />  }<br />}</p></scss></p></root>
+      <root><h1>Object-fit</h1><p>Object-fit provides us <code>cover</code> and <code>contain</code> control which is similar to <code>background-size</code>. The difference is that background image is a decoration that happens in CSS. Object-fit, on the other hand, applies to &lt;img&gt; tag. An img tag is treated as content and hence it keeps the accessibility.</p><pre><code class="language-css">figure {
+  padding: 5px;
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+}</code></pre><p data-height="700" data-slug-hash="pvKeOb" data-theme-id="15336" data-default-tab="result" data-user="makzan"><a href="http://codepen.io/makzan/pen/pvKeOb"><string-append>http://codepen.io/makzan/pen/pvKeOb</string-append></a></p></root>
     </article>
 
     <nav>
@@ -59,5 +71,6 @@
   <script src="/js/smoothstate.js"></script>
   <script src="/js/prism.min.js"></script>
   <script src="/js/website.js"></script>
+  <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 </body>
 </html>

@@ -8,14 +8,18 @@ index.html
 }
 ◊chapter-1/index.html{
   chapter-1/flex-grow-and-shrink.html
+  chapter-1/center-align.html
+  chapter-1/center-align-multiple-items.html
+  chapter-1/inputs.html
+  chapter-1/container-and-items.html
 }
 ◊chapter-2/index.html{
   chapter-2/grid-and-block-grid.html
   chapter-2/mobile-first.html
   chapter-2/floating-grid.html
-  chapter-2/grid.html
 }
 ◊chapter-3/index.html{
+  chapter-3/grid.html
 }
 summary.html
 ◊appendix/index.html{

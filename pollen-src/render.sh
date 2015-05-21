@@ -16,6 +16,7 @@ rm ../build-tmp/directory-require.rkt
 rm ../build-tmp/index.ptree
 rm ../build-tmp/render.sh
 rm ../build-tmp/pollen.cache
+rm ./**/*.rkt
 rm ./**/*.html
 rm ./*.html
 

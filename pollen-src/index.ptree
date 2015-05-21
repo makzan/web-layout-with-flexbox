@@ -1,14 +1,24 @@
 #lang pollen
 
 index.html
+◊chapter-0/index.html{
+  chapter-0/about-makzan.html
+  chapter-0/contact.html
+  chapter-0/preparing.html
+}
 ◊chapter-1/index.html{
-  chapter-1/preparing.html
-  chapter-1/about-makzan.html
-  chapter-1/contact.html
+  chapter-1/flex-grow-and-shrink.html
 }
 ◊chapter-2/index.html{
+  chapter-2/grid-and-block-grid.html
+  chapter-2/mobile-first.html
+  chapter-2/floating-grid.html
+  chapter-2/grid.html
 }
 ◊chapter-3/index.html{
 }
 summary.html
+◊appendix/index.html{
+  appendix/object-fit.html
+}
 log.html

@@ -1,0 +1,8 @@
+.embed-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.embed-nav a.active::after {
+  display: none;
+}

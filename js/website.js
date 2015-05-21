@@ -1,3 +1,5 @@
+document.addEventListener("touchstart", function(){}, true);
+
 // // First letter
 // var dropcapFirstLetter = function(){
 //   $('article > root > p:first-of-type').html(function (i, html) {
@@ -65,7 +67,7 @@ var registerAllImgToImageViewer = function() {
     img_elm = img_elms[i];
     img_elm.onclick = function(e) {
       overlay_img_elm.src = this.src;
-      overlay_caption_elm.textContent = this.alt;
+      overlay_caption_elm.textContent = this.alt.replace("&nbsp", " ");
       return overlay_elm.classList.remove('out');
     };
   }

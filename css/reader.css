@@ -352,7 +352,7 @@ footer {
 }
 footer a,
 footer a:visited {
-  color: GRAY;
+  color: DARKGRAY;
 }
 footer a:hover {
   color: CRIMSON;

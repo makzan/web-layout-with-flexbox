@@ -25,7 +25,7 @@ var fixFirstLetterInFirefox = function() {
 
     $('#main').smoothState({
       prefetch: true,
-      pageCacheSize: 0,
+      pageCacheSize: 10,
       callback : function(url, $container, $content) {
         // Prism:
         Prism.highlightAll();

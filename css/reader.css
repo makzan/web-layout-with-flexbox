@@ -100,14 +100,14 @@ aside {
   border-top: 1px dashed DARKGRAY;
   border-bottom: 1px dashed DARKGRAY;
 
-  height: 100px;
-  overflow: hidden;
-  transition: all 0.3s ease-out;
+  /*height: 100px;*/
+  /*overflow: hidden;*/
+  /*transition: all 0.3s ease-out;*/
 }
-sidenote:hover,
-aside:hover {
-  height: 130px;
-}
+/*sidenote:hover,*/
+/*aside:hover {*/
+/*  height: 130px;*/
+/*}*/
 sidenote.expanded,
 sidenote:active,
 aside.expanded,

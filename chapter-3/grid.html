@@ -15,7 +15,7 @@
   <main id="main">
     <header>
       <p>
-        <a id="chapter" href="/chapter-3/index.html">Chapter 3—Grid, powered by FlexBox</a>
+        <a id="chapter" href="/chapter-3/index.html">Chapter 3—Grid layout, powered by FlexBox</a>
 
 
       </p>
@@ -25,7 +25,38 @@
     </header>
 
     <article>
-      <root><h1>Implementation of the grid</h1><p>It’s very easy to define our <em>mobile-first grid system</em> by using the Scss’s list, loop and variable.</p><pre><code class="language-css">$columns-count: 12;
+      <root><h1>Implementation of the grid</h1><p>We have learned the basic functionality of using Flexbox. We also learned the traditional float-based grid layout. Now we are ready to create our own Flexbox layout based on what we learned.</p><h2 id="time-for-action"><a href="#time-for-action"><string-append>Time for Action—Migrating our grid into Flexbox</string-append></a></h2><ol><li><p>Our basic CSS hasn’t changed much. We changed the <code>.row</code> into <code>display:flex</code> with <code>flex-wrap</code>. The other parts are same as the float-based grid.</p><pre><code class="language-css">/* Border box */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Grid */
+.row {
+  /* if you need a largest width */
+  width: 1920px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+.row .row {
+  margin-left: -10px;
+  margin-right: -10px;
+  width: auto;
+  max-width: none;
+}
+
+.col {
+  padding: 0 10px;
+  min-width: 0;
+
+  border: 1px dashed LIGHTGRAY; /* for debugging */
+}</code></pre></li><li><aside><code>flex: 0 1 50%</code> means <code>flex-grow:0</code>, <code>flex-shrink:1</code> and <code>flex-basis:50%</code></aside><p>Our final outcome is to replace the <code>width</code> in column with something like <code>flex: 0 1 50%;</code> and <code>flex: 0 1 100%;</code>. The pertentage acts as the desired width value. But we don’t define the width. We define the <code>flex-basis</code> which is essentially the <code>min-width</code> of the element. Flexbox will calculate how much space each item takes based on this value.</p></li><li><p>It’s very easy to define our <em>mobile-first grid system</em> by using the Scss’s list, loop and variable. In the code, we not only define the columns’ width, we also define classes for <em>auto expand</em>, <em>shrink</em>, <em>vertical direction</em> and <em>horizontal direction</em>. An extra <em>hidden</em> class allows us to hide element in smaller screen.</p><pre><code class="language-css">$columns-count: 12;
 $screen-sizes: small medium large xlarge xxlarge;
 $breakpoints: 0 500px 1000px 1200px 1600px;
 @for $i from 1 through length($screen-sizes) {
@@ -42,7 +73,7 @@ $breakpoints: 0 500px 1000px 1200px 1600px;
       }
     }
   }
-}</code></pre><h1>Implementation of block grid</h1><p>Block grid is a grid system that we define how many items per roles inside the container. It trys to evenly distribute the items into the container within the items-limitation per role.</p><pre><code class="language-css">/* Block grid */
+}</code></pre></li></ol><h2 id="implementation-of-block-grid"><a href="#implementation-of-block-grid">Implementation of block grid</a></h2><p>Block grid is a grid system that we define how many items per roles inside the container. It trys to evenly distribute the items into the container within the items-limitation per role.</p><pre><code class="language-css">/* Block grid */
 .block-grid {
   display: flex;
   flex-wrap: wrap;
@@ -56,7 +87,7 @@ $breakpoints: 0 500px 1000px 1200px 1600px;
       }
     }
   }
-}</code></pre><h1>HTML that uses the grid</h1><pre><code class="language-markup">&lt;header&gt;
+}</code></pre><h2 id="html-that-uses-the-grid"><a href="#html-that-uses-the-grid">HTML that uses the grid</a></h2><aside><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.51.12%20PM.png" alt="Our web layout." /></p><figcaption>Our web layout.</figcaption></figure></aside><pre><code class="language-markup">&lt;header&gt;
   &lt;div class="row"&gt;
     &lt;div class="small-12 col"&gt;
       &lt;h1&gt;Cake Shop&lt;/h1&gt;
@@ -144,18 +175,18 @@ $breakpoints: 0 500px 1000px 1200px 1600px;
       CC0 Do anything license.
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/footer&gt;</code></pre></root>
+&lt;/footer&gt;</code></pre><h2 id="result-and-live-demo"><a href="#result-and-live-demo">Result and live demo</a></h2><p>Here is the final result we get:</p><div class="block-grid-2"><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.50.45%20PM.png" alt="In small screen." /></p><figcaption>In small screen.</figcaption></figure><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.50.53%20PM.png" alt="In medium screen." /></p><figcaption>In medium screen.</figcaption></figure></div><div class="block-grid-2"><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.51.02%20PM.png" alt="In large screen." /></p><figcaption>In large screen.</figcaption></figure><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.51.12%20PM.png" alt="In extra large screen." /></p><figcaption>In extra large screen.</figcaption></figure></div><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.51.19%20PM.png" alt="In xx-large screen." /></p><figcaption>In xx-large screen.</figcaption></figure><p>You can find the final code in the following CodePen demo.</p><p data-height="500" data-slug-hash="GJjMEL" data-theme-id="15336" data-default-tab="result" data-user="makzan"><a href="http://codepen.io/makzan/pen/GJjMEL">http://codepen.io/makzan/pen/GJjMEL</a></p></root>
     </article>
 
     <nav>
 
-      <a id="prev" href="/chapter-3/index.html">← Chapter 3—Grid, powered by FlexBox</a>
+      <a id="prev" href="/chapter-3/index.html">← Chapter 3—Grid layout, powered by FlexBox</a>
 
       <a id="next" href="/summary.html">Summary →</a>
     </nav>
 
 
-    <a href="/chapter-3/index.html" title="← Chapter 3—Grid, powered by FlexBox" class="overlay prev">←</a>
+    <a href="/chapter-3/index.html" title="← Chapter 3—Grid layout, powered by FlexBox" class="overlay prev">←</a>
 
     <a href="/summary.html" title="Summary →" class="overlay next">→</a>
 
@@ -172,12 +203,11 @@ $breakpoints: 0 500px 1000px 1200px 1600px;
   </div>
 
   <!-- © 2015 Thomas Seng Hin Mak. -->
-
   <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="//assets.codepen.io/assets/embed/ei.js"></script>
   <script src="/js/smoothstate.js"></script>
   <script src="/js/prism.min.js"></script>
   <script src="/js/website.js"></script>
-  <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 </body>
 </html>

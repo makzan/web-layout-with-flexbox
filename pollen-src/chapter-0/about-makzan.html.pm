@@ -12,7 +12,7 @@ I’m now in Macao to help transfering technology knowledge to Macao’s small-m
 
 ◊section{Macau Productivity and Technology Transfer Center}
 
-We are the largest IT training center in Macau. We provide training on networking, app development, creative designs, 3D printing and lots more.
+We are the largest IT professional training center in Macau. We provide training on networking, app development, creative designs, 3D printing and lots more.
 
 We also train students and teenagers to different competitions. For instance, I was the students in 2003 and won the ◊em{bronze} medal of web design in switzerland. I became the trainer from 2009 and brought my students to win the ◊em{bronze} and ◊em{silver} medal in London and Germany in recent years.
 

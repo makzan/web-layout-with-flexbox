@@ -13,8 +13,6 @@ index.html
   chapter-1/flex-grow-and-shrink.html
 }
 ◊chapter-2/index.html{
-  chapter-2/grid-and-block-grid.html
-  chapter-2/mobile-first.html
   chapter-2/row-column-based-layout.html
   chapter-2/floating-grid.html
 }
@@ -24,5 +22,6 @@ index.html
 summary.html
 ◊appendix/index.html{
   appendix/object-fit.html
+  appendix/about-pollen.html
 }
 log.html

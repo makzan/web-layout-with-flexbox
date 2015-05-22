@@ -2,9 +2,9 @@
 
 ◊headline{Preparing for the workshop}
 
-You’ll need to bring your laptop with a modern browser and your favorite code editor installed. During the workshop, we will have some hand-on exercises. You can download all the material in the following link. It contains the code, images and libraries we need.
+You’ll need to bring your laptop with a modern browser and your favorite code editor installed. During the workshop, there are several code demos. I put both the code into the page and on Codepen is live demo. You can find thoes live demo in the following Codpen collection. Please fork them and play around the code yourself. You won’t learn it until you hack it.
 
-◊link["http://flexbox.website/material/"]{http://flexbox.website/material/}
+◊link["http://codepen.io/collection/XdbWMW/"]{Code examples on CodePen}
 
 ◊section{-prefix-free library}
 

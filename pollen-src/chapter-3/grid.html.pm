@@ -2,30 +2,83 @@
 
 ◊headline{Implementation of the grid}
 
-It’s very easy to define our ◊em{mobile-first grid system} by using the Scss’s list, loop and variable.
+We have learned the basic functionality of using Flexbox. We also learned the traditional float-based grid layout. Now we are ready to create our own Flexbox layout based on what we learned.
 
-◊css{
-  $columns-count: 12;
-  $screen-sizes: small medium large xlarge xxlarge;
-  $breakpoints: 0 500px 1000px 1200px 1600px;
-  @for $i from 1 through length($screen-sizes) {
-    @media screen and (min-width: nth($breakpoints, $i)){
-      .#{nth($screen-sizes, $i)}-vertical { flex-direction:column; }
-      .#{nth($screen-sizes, $i)}-horizontal { flex-direction:row; }
-      .#{nth($screen-sizes, $i)}-hidden { display: none; }
-      .#{nth($screen-sizes, $i)}-auto   { display: block; flex: 1}
-      .#{nth($screen-sizes, $i)}-shrink { display: block; flex: 0 1 auto}
-      @for $j from 1 through $columns-count {
-        .#{nth($screen-sizes, $i)}-#{$j} {
-          display: block; 
-          flex: 0 1 calc( 100% / #{$columns-count} * #{$j} );
-        }
-      }    
-    }  
+◊time-for-action{Migrating our grid into Flexbox}
+
+◊(steps
+  ◊step{Our basic CSS hasn’t changed much. We changed the ◊code{.row} into ◊code{display:flex} with ◊code{flex-wrap}. The other parts are same as the float-based grid.
+  
+    ◊css{
+      /* Border box */
+      * {
+        box-sizing: border-box;
+      }
+      
+      img {
+        max-width: 100%;
+      }
+      
+      /* Grid */
+      .row {
+        /* if you need a largest width */
+        width: 1920px;
+        max-width: 100%;
+        margin: 0 auto;
+      
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .row .row {
+        margin-left: -10px;
+        margin-right: -10px;
+        width: auto;
+        max-width: none;
+      }
+      
+      .col {
+        padding: 0 10px;
+        min-width: 0;
+        
+        border: 1px dashed LIGHTGRAY; /* for debugging */
+      }
+    }
   }
-}
+  ◊step{
+    
+    ◊sidenote{◊code{flex: 0 1 50%} means ◊code{flex-grow:0}, ◊code{flex-shrink:1} and ◊code{flex-basis:50%}}
+    
+    Our final outcome is to replace the ◊code{width} in column with something like ◊code{flex: 0 1 50%;} and ◊code{flex: 0 1 100%;}. The pertentage acts as the desired width value. But we don’t define the width. We define the ◊code{flex-basis} which is essentially the ◊code{min-width} of the element. Flexbox will calculate how much space each item takes based on this value.
+  }
+  
+  ◊step{
+    It’s very easy to define our ◊em{mobile-first grid system} by using the Scss’s list, loop and variable. In the code, we not only define the columns’ width, we also define classes for ◊em{auto expand}, ◊em{shrink}, ◊em{vertical direction} and ◊em{horizontal direction}. An extra ◊em{hidden} class allows us to hide element in smaller screen.
 
-◊headline{Implementation of block grid}
+    ◊css{
+      $columns-count: 12;
+      $screen-sizes: small medium large xlarge xxlarge;
+      $breakpoints: 0 500px 1000px 1200px 1600px;
+      @for $i from 1 through length($screen-sizes) {
+        @media screen and (min-width: nth($breakpoints, $i)){
+          .#{nth($screen-sizes, $i)}-vertical { flex-direction:column; }
+          .#{nth($screen-sizes, $i)}-horizontal { flex-direction:row; }
+          .#{nth($screen-sizes, $i)}-hidden { display: none; }
+          .#{nth($screen-sizes, $i)}-auto   { display: block; flex: 1}
+          .#{nth($screen-sizes, $i)}-shrink { display: block; flex: 0 1 auto}
+          @for $j from 1 through $columns-count {
+            .#{nth($screen-sizes, $i)}-#{$j} {
+              display: block; 
+              flex: 0 1 calc( 100% / #{$columns-count} * #{$j} );
+            }
+          }    
+        }  
+      }
+    }
+  }
+)
+
+
+◊section{Implementation of block grid}
 
 Block grid is a grid system that we define how many items per roles inside the container. It trys to evenly distribute the items into the container within the items-limitation per role.
 
@@ -47,7 +100,13 @@ Block grid is a grid system that we define how many items per roles inside the c
   }
 }
 
-◊headline{HTML that uses the grid}
+
+
+◊section{HTML that uses the grid}
+
+◊sidenote{
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.51.12%20PM.png"]{Our web layout.}
+}
 
 ◊markup{
   <header>
@@ -140,3 +199,24 @@ Block grid is a grid system that we define how many items per roles inside the c
     </div>
   </footer>
 }
+
+◊section{Result and live demo}
+
+Here is the final result we get:
+  
+◊(compare
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.50.45%20PM.png"]{In small screen.}
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.50.53%20PM.png"]{In medium screen.}
+)
+
+◊(compare
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.51.02%20PM.png"]{In large screen.}
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.51.12%20PM.png"]{In extra large screen.}
+)
+
+◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.51.19%20PM.png"]{In xx-large screen.}
+
+
+You can find the final code in the following CodePen demo.
+
+◊codepen["500"]{GJjMEL}

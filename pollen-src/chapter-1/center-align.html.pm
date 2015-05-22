@@ -29,6 +29,10 @@ The beautify of ◊code{margin: auto} on the child items is that it automaticall
 
 ◊section{Example—Distribute multiple items in container}
 
+◊sidenote{
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.06.47%20PM.png"]{Multiple items are automatically distributed within container.}
+}
+
 Thanks to the ◊code{margin: auto}, the browser automatically distribute all the items inside the flexbox container equally.
 
 ◊markup{
@@ -56,9 +60,13 @@ Alternatively, we can configure the alignment in the container by using the ◊c
 
 ◊section{Example—Center aligning multiple items}
 
+◊sidenote{
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%201.05.34%20PM.png"]{Multiple items being center aligned.}
+}
+
 By using the container’s alignment options, we can center align multiple items together.
 
-◊markup{
+◊css{
   html, body {
     height: 100%
   }
@@ -78,5 +86,8 @@ By using the container’s alignment options, we can center align multiple items
   }
 }
 
+
+You can find the live demo in the following link:
+  
 ◊codepen["368"]{dopZxX}
 

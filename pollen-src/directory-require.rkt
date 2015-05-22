@@ -58,7 +58,7 @@
 (define (ioscode code1 code2) `(div (div (a [[data-lang, "objc"]], "Obj-C") (a [[data-lang, "swift"]], "Swift")), code1 , code2) )
 
 
-(define (codepen height slug) `(p [[data-height, height][data-slug-hash, slug][data-theme-id,"15336"][data-default-tab, "result"][data-user, "makzan"]] (a [[href, (string-append "http://codepen.io/makzan/pen/" slug)]] (string-append "http://codepen.io/makzan/pen/", slug)) ))
+(define (codepen height slug) `(p [[data-height, height][data-slug-hash, slug][data-theme-id,"15336"][data-default-tab, "result"][data-user, "makzan"]] (a [[href, (string-append "http://codepen.io/makzan/pen/" slug)]] "http://codepen.io/makzan/pen/", slug) ))
 
   
 

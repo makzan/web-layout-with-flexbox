@@ -33,7 +33,7 @@ article > root > p:first-of-type:first-letter {
   float: left;
   line-height: .5;
   margin: 0;
-  padding: .37em .05em 0 0;
+  padding: .37em .07em 0 0;
   color: CRIMSON;
   font-style: normal;
 }
@@ -279,6 +279,15 @@ pre {
   font-size: 12pt;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+p > code,
+li > code,
+aside > code
+{
+  font-size: 0.7em;
+  padding: .2em;
+  background: #efefef;
 }
 
 

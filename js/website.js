@@ -24,6 +24,9 @@ var fixFirstLetterInFirefox = function() {
   $(function(){
     // dropcapFirstLetter();
     fixFirstLetterInFirefox();
+    
+    // CodePen embed
+    CodePenEmbed.init();
 
     $('#main').smoothState({
       prefetch: true,
@@ -34,6 +37,9 @@ var fixFirstLetterInFirefox = function() {
 
         // dropcapFirstLetter();
         fixFirstLetterInFirefox();
+        
+        // CodePen embed
+        CodePenEmbed.init();
 
         // TODO: integrate into the overlay code block
         registerAllImgToImageViewer();

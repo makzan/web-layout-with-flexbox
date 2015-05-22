@@ -25,7 +25,7 @@
     </header>
 
     <article>
-      <root><h1>Inputs</h1><pre><code class="language-markup">&lt;div class="container"&gt;
+      <root><h1>Inputs</h1><p>With the grow and shrink feature, we can define items that shrinks to its content’s width, and the main input will take all the rest of the space.</p><aside><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%2012.28.50%20PM.png" alt="The result running in browser." /></p><figcaption>The result running in browser.</figcaption></figure></aside><h2 id="time-for-action"><a href="#time-for-action"><string-append>Time for Action—Creating an input form with prefix and postfix</string-append></a></h2><ol><li><p>First, we create the following HTML markup.</p><pre><code class="language-markup">&lt;div class="container"&gt;
   &lt;form&gt;
     &lt;fieldset&gt;
       &lt;label for="twitter-handle"&gt;Twitter:&lt;/label&gt;
@@ -43,7 +43,43 @@
     &lt;/fieldset&gt;
     &lt;input type="submit" value="Done"&gt;
   &lt;/form&gt;
-&lt;/div&gt;</code></pre><h2 id="live-demo"><a href="#live-demo">Live Demo</a></h2><p data-height="385" data-slug-hash="zGKPRb" data-theme-id="15336" data-default-tab="result" data-user="makzan"><a href="http://codepen.io/makzan/pen/zGKPRb"><string-append>http://codepen.io/makzan/pen/zGKPRb</string-append></a></p></root>
+&lt;/div&gt;</code></pre></li><li><p>Then we just need few lines of flex code to make it works. Display flex, grow, shrink, and Done.</p><pre><code class="language-css">.input {
+  display: flex;
+}
+.input &gt; span {
+  flex: 0 1 auto;
+}
+.input &gt; input {
+  flex: 1;
+}</code></pre></li><li><p>Well, I actually applied more styles to make the input looks nice. I added the following code to archive the screenshot we show at the beginning. They are not our focus, but I include it so you see how we can make our inputs more easily to use by using padding.</p><pre><code class="language-css">/* Container flexbox */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+/* Not our focus */
+fieldset{
+  border: none;
+  padding: 0;
+  margin: 1em 0;
+}
+
+.input &gt; span {
+  display: block;
+  background: #efefef;
+  padding: 0.5em;
+}
+.input &gt; input {
+  padding: 0.5em;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 0.5em;
+}</code></pre></li></ol><h2 id="live-demo"><a href="#live-demo">Live Demo</a></h2><p>You may find the live demo of the code in the following codepen entry.</p><p data-height="385" data-slug-hash="zGKPRb" data-theme-id="15336" data-default-tab="result" data-user="makzan"><a href="http://codepen.io/makzan/pen/zGKPRb"><string-append>http://codepen.io/makzan/pen/zGKPRb</string-append></a></p></root>
     </article>
 
     <nav>

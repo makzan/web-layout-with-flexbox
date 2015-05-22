@@ -27,6 +27,8 @@ It’s very easy to define our ◊em{mobile-first grid system} by using the Scss
 
 ◊headline{Implementation of block grid}
 
+Block grid is a grid system that we define how many items per roles inside the container. It trys to evenly distribute the items into the container within the items-limitation per role.
+
 ◊css{
   /* Block grid */
   .block-grid {

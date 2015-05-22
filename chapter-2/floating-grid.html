@@ -4,7 +4,7 @@
   <script src="//use.typekit.net/gfc3fmv.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Floating grid | Flexbox.website</title>
+  <title>Floating grid with Scss | Flexbox.website</title>
   <link rel="stylesheet" href="/css/prism.css">
   <link rel="stylesheet" href="/css/reader.css">
 
@@ -25,62 +25,7 @@
     </header>
 
     <article>
-      <root><h1>Floating grid</h1><p>Revisiting the grid layout with <em>float</em>.</p><p>Row column grid system.</p><pre><code class="language-css">$columns-count: 12;
-@media screen {
-  @for $i from 1 through $columns-count {
-    .col-#{$i} {
-      width: 100%/$columns-count * $i;
-    }
-  }
-}</code></pre><p>Calculated result:</p><pre><code class="language-css">@media screen {
-  .col-1 {
-    width: 8.33333%;
-  }
-
-  .col-2 {
-    width: 16.66667%;
-  }
-
-  .col-3 {
-    width: 25%;
-  }
-
-  .col-4 {
-    width: 33.33333%;
-  }
-
-  .col-5 {
-    width: 41.66667%;
-  }
-
-  .col-6 {
-    width: 50%;
-  }
-
-  .col-7 {
-    width: 58.33333%;
-  }
-
-  .col-8 {
-    width: 66.66667%;
-  }
-
-  .col-9 {
-    width: 75%;
-  }
-
-  .col-10 {
-    width: 83.33333%;
-  }
-
-  .col-11 {
-    width: 91.66667%;
-  }
-
-  .col-12 {
-    width: 100%;
-  }
-}</code></pre><h2 id="applying-mobile-first-approach"><a href="#applying-mobile-first-approach">Applying mobile first approach</a></h2><pre><code class="language-css">$columns-count: 12;
+      <root><h1>Floating grid with Scss</h1><p>We have built a very basic grid system. There are many pattern-repeating code when defining the columns. We can use proprocessor to keep the code shorter for easier maintenance.</p><pre><code class="language-css">$columns-count: 12;
 $breakpoint: 800px;
 @media screen {
   @for $i from 1 through $columns-count {

@@ -93,3 +93,53 @@ Before building our Flexbox layout, we revisit the traditional float-based grid 
     }
   }
 )
+
+◊section{Using our grid system}
+
+The following HTML is an example showing our grid system.
+
+◊sidenote{The HTML code only shows the grid structure. You may need to include the proper HTML structure with <head> and includes the CSS styles}
+
+◊markup{
+  <div class="row">
+    <div class="small-12 col">Float based layout</div>  
+  </div>
+  <nav class="row">
+    <div class="small-12 col">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Clients</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>  
+  </nav> 
+  <div class="row">
+    <main class="small-4 medium-3 col">
+      <h1>Headnig of main content</h1>
+      <p>Main content goes here.</p>
+      <p>Main content goes here.</p>
+      <p>Main content goes here.</p>
+      <p>Main content goes here.</p>
+    </main>
+    <aside class="small-4 medium-1 col">
+      <p>Aside content goes here.</p>
+      <img src="http://placehold.it/500x300" alt="placeholder">
+      <img src="http://placehold.it/500x300" alt="placeholder">
+    </aside>
+  </div>
+  <footer>
+    <div class="row">
+      <div class="small-12 col">
+        <p>This is a demo in <a href="http://flexbox.website">Web layout with Flexbox</a> workshop by <a href="http://makzan.net">makzan</a>.</p>
+      </div>
+    </div>
+  </footer>
+}
+
+When running the page in browser, we will see the following screens.
+
+◊(compare
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%2012.14.54%20PM.png"]{Web page displayed in small screen.}
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%2012.15.02%20PM.png"]{Web page displayed in wider screen.}
+)

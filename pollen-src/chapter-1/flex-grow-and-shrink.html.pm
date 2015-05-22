@@ -22,6 +22,8 @@ Shrink is how each item should squeeze when the container is smaller. Having val
 
 ◊section{Applying grow and shrink}
 
+Given the following HTML structure:
+
 ◊markup{
   <div class="container">
     <header>
@@ -29,11 +31,21 @@ Shrink is how each item should squeeze when the container is smaller. Having val
     </header>
     <main>
       <p>Main content.</p>
+      <p>Main content.</p>
+      <p>Main content.</p>
+      <p>Main content.</p>
+      ...
     </main>
     <footer>
       Footer goes here.
     </footer>
   </div>
+}
+
+We can make the header and footer shrink to its content height. Then we make the main content auto expand to take up all the spaces.
+
+◊sidenote{
+  ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%2012.24.39%20PM.png"]{Our code running in small screen.}
 }
 
 ◊css{
@@ -54,3 +66,9 @@ Shrink is how each item should squeeze when the container is smaller. Having val
     -webkit-overflow-scrolling:touch;
   }
 }
+
+You may also find the live code in the following codepen demo.
+
+◊codepen["400"]{mJrqzO}
+
+

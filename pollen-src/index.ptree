@@ -7,10 +7,11 @@ index.html
   chapter-0/preparing.html
 }
 ◊chapter-1/index.html{
+  chapter-1/flex-direction.html
   chapter-1/center-align.html
-  chapter-1/inputs.html
   chapter-1/container-and-items.html
   chapter-1/flex-grow-and-shrink.html
+  chapter-1/inputs.html
 }
 ◊chapter-2/index.html{
   chapter-2/row-column-based-layout.html

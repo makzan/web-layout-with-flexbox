@@ -25,20 +25,45 @@
     </header>
 
     <article>
-      <root><h1>Flex grow and shrink</h1><p>We mainly focus on the <code>flex-grow</code> and <code>flex-shrink</code> property.</p><h2 id="flex-grow"><a href="#flex-grow">flex-grow</a></h2><p>grow defines how the items</p><pre><code class="language-css">flex: 1;</code></pre><h2 id="flex-shrink"><a href="#flex-shrink">flex-shrink</a></h2><pre><code class="language-css">flex: 0 1 auto;</code></pre></root>
+      <root><h1>Flex grow and shrink</h1><p>When we’re building the grid layout, we need to master another concept of flexbox—<em>grow</em> and <em>shrink</em>.</p><h2 id="flex-grow"><a href="#flex-grow">flex-grow</a></h2><p>Grow defines how the items expand to takes the extra spaces. Grow affects the items when there are empty spaces in the container. Grow defines the ratio each item should expand. Given value 1 on all items mean each one of them should take equaly width, or height, depends on the <code>flex-direction</code>.</p><pre><code class="language-css">flex: 1;</code></pre><h2 id="flex-shrink"><a href="#flex-shrink">flex-shrink</a></h2><p>Shrink is how each item should squeeze when the container is smaller. Having value 1 on all items means all items shrinks equally.</p><pre><code class="language-css">flex: 0 1 auto;</code></pre><h2 id="applying-grow-and-shrink"><a href="#applying-grow-and-shrink">Applying grow and shrink</a></h2><pre><code class="language-markup">&lt;div class="container"&gt;
+  &lt;header&gt;
+    Header goes here.
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;p&gt;Main content.&lt;/p&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;
+    Footer goes here.
+  &lt;/footer&gt;
+&lt;/div&gt;</code></pre><pre><code class="language-css">html, body {
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+header, footer {
+  flex: 0 1 auto;
+}
+main {
+  flex: 1;
+  overflow: scroll;
+  -webkit-overflow-scrolling:touch;
+}</code></pre></root>
     </article>
 
     <nav>
 
-      <a id="prev" href="/chapter-1/index.html">← Chapter 1—Introducing Flexbox</a>
+      <a id="prev" href="/chapter-1/container-and-items.html">← Container and items</a>
 
-      <a id="next" href="/chapter-1/center-align.html">Center align →</a>
+      <a id="next" href="/chapter-2/index.html">Chapter 2—Row–Column grid layout →</a>
     </nav>
 
 
-    <a href="/chapter-1/index.html" title="← Chapter 1—Introducing Flexbox" class="overlay prev">←</a>
+    <a href="/chapter-1/container-and-items.html" title="← Container and items" class="overlay prev">←</a>
 
-    <a href="/chapter-1/center-align.html" title="Center align →" class="overlay next">→</a>
+    <a href="/chapter-2/index.html" title="Chapter 2—Row–Column grid layout →" class="overlay next">→</a>
 
 
   </main>

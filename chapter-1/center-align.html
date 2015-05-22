@@ -25,25 +25,54 @@
     </header>
 
     <article>
-      <root><h1>Center align</h1><p><html>&lt;div class="container"&gt;<br />  &lt;div class="item"&gt;Center aligned.&lt;/div&gt;<br />&lt;/div&gt;</html></p><pre><code class="language-css">.container {
+      <root><h1>Center align</h1><p>Center alignment is one of the most discussed topic in CSS. Flexbox provides a easy and elegant way to solve this layout issue.</p><aside><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20flexbox.website/Screen%20Shot%202015-05-22%20at%202.24.06%20AM.png" alt="The result of center-aligned item inside the container." /></p><figcaption>The result of center-aligned item inside the container.</figcaption></figure></aside><h2 id="example—center-aligning-one-item"><a href="#example—center-aligning-one-item">Example—Center aligning one item</a></h2><pre><code class="language-markup">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;Center aligned.&lt;/div&gt;
+&lt;/div&gt;</code></pre><pre><code class="language-css">.container {
   display: flex;
 }
 .item {
   margin: auto;
-}</code></pre></root>
+}</code></pre><p>The beautify of <code>margin: auto</code> on the child items is that it automatically spread the items across the space with equivalent margins.</p><h2 id="example—distribute-multiple-items-in-container"><a href="#example—distribute-multiple-items-in-container">Example—Distribute multiple items in container</a></h2><p>Thanks to the <code>margin: auto</code>, the browser automatically distribute all the items inside the flexbox container equally.</p><pre><code class="language-markup">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;Item.&lt;/div&gt;
+  &lt;div class="item"&gt;Item.&lt;/div&gt;
+  &lt;div class="item"&gt;Item.&lt;/div&gt;
+&lt;/div&gt;</code></pre><h2 id="using-align-items-and-justify-content"><a href="#using-align-items-and-justify-content">Using align-items and justify-content</a></h2><p>Alternatively, we can configure the alignment in the container by using the <code>align-items</code> and <code>justify-content</code> properties.</p><pre><code class="language-css">.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item {
+  /* No need to specify the alignment in children */
+}</code></pre><h2 id="example—center-aligning-multiple-items"><a href="#example—center-aligning-multiple-items">Example—Center aligning multiple items</a></h2><p>By using the container’s alignment options, we can center align multiple items together.</p><pre><code class="language-markup">html, body {
+  height: 100%
+}
+.container {
+  display: flex;
+  height: 100%;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+.box {
+  height: 50px;
+  width: 300px;
+  margin: 0.2em;
+}</code></pre><p data-height="368" data-slug-hash="dopZxX" data-theme-id="15336" data-default-tab="result" data-user="makzan"><a href="http://codepen.io/makzan/pen/dopZxX"><string-append>http://codepen.io/makzan/pen/dopZxX</string-append></a></p></root>
     </article>
 
     <nav>
 
-      <a id="prev" href="/chapter-1/flex-grow-and-shrink.html">← Flex grow and shrink</a>
+      <a id="prev" href="/chapter-1/index.html">← Chapter 1—Introducing Flexbox</a>
 
-      <a id="next" href="/chapter-1/center-align-multiple-items.html">Center align multiple items →</a>
+      <a id="next" href="/chapter-1/inputs.html">Inputs →</a>
     </nav>
 
 
-    <a href="/chapter-1/flex-grow-and-shrink.html" title="← Flex grow and shrink" class="overlay prev">←</a>
+    <a href="/chapter-1/index.html" title="← Chapter 1—Introducing Flexbox" class="overlay prev">←</a>
 
-    <a href="/chapter-1/center-align-multiple-items.html" title="Center align multiple items →" class="overlay next">→</a>
+    <a href="/chapter-1/inputs.html" title="Inputs →" class="overlay next">→</a>
 
 
   </main>

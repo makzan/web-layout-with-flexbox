@@ -8,3 +8,4 @@ After going through this book, you should have more understandings on how we can
 
 ◊link["https://css-tricks.com/snippets/css/a-guide-to-flexbox/"]{CSS-Trick’s complete guide to Flexbox}
 ◊link["http://makzan.net/web-design-scrapbook/learning-flexbox/"]{My cheatsheet on Flexbox alignment}
+◊link["https://github.com/philipwalton/flexbugs"]{Known borwser issues on implementing flexbox}

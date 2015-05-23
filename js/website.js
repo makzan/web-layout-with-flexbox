@@ -27,6 +27,9 @@ var fixFirstLetterInFirefox = function() {
     
     // CodePen embed
     CodePenEmbed.init();
+    
+    // MixPanel
+    mixpanel.track("Page View");
 
     $('#main').smoothState({
       prefetch: true,
@@ -40,6 +43,9 @@ var fixFirstLetterInFirefox = function() {
         
         // CodePen embed
         CodePenEmbed.init();
+        
+        // MixPanel
+        mixpanel.track("Page View");
 
         // TODO: integrate into the overlay code block
         registerAllImgToImageViewer();

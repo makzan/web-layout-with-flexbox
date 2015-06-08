@@ -11,6 +11,6 @@ This is the material I originally created for workshop “◊strong{Web Layout w
   ◊tocitem["/chapter-2/"]{Chapter 2—Row–Column grid layout}
   ◊tocitem["/chapter-3/"]{Chapter 3—Grid layout, powered by FlexBox}
   ◊tocitem["/summary.html"]{Summary}
-  ◊tocitem["/appendex/"]{Appendix}
+  ◊tocitem["/appendix/"]{Appendix}
 )
 
